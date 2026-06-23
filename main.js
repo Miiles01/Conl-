@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const rightCircle = root040.querySelector('.parent-circle-right');
         const rightItems = rightCircle.querySelectorAll('.circle');
 
-        const angle = 14;
+        const angle = window.innerWidth < 768 ? 20 : 14;
         const pinHeight = root040.querySelector('.pin-height');
 
         leftItems.forEach((el, index) => {

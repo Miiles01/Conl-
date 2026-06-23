@@ -1249,18 +1249,27 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
         width: 150vw;
         height: 150vw;
     }
+    .mwg_effect040 .parent-circle-left {
+        right: 40%; /* Gives the text labels more room on the left */
+    }
+    .mwg_effect040 .parent-circle-right {
+        left: 45%; /* Brings the icon squares further into the screen */
+    }
     .mwg_effect040 .media {
-        width: 18vw;
-        height: 18vw;
+        width: 15vw;
+        height: 15vw;
         min-width: 60px;
         min-height: 60px;
     }
     .mwg_effect040 .media svg {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
+    }
+    .mwg_effect040 .label {
+        padding-right: 6vw; /* Space between text and squares */
     }
     .mwg_effect040 .label h4 {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
     }
     .mwg_effect040 .label p {
         font-size: 0.8rem;
