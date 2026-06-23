@@ -52,33 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     stagger: 0.15,
   }, "-=0.5");
 
-  // Animate Hero Title (.sentence)
-  const heroTitle = document.querySelector('.sentence');
-  if (heroTitle) {
-    const splitTitle = new SplitText(heroTitle, { type: "lines, words, chars", charsClass: "letter", wordsClass: "word", linesClass: "line" });
-    
-    // Mask the lines
-    splitTitle.lines.forEach(line => {
-      const wrapper = document.createElement('div');
-      wrapper.style.overflow = 'hidden';
-      wrapper.style.display = 'block';
-      wrapper.style.paddingBottom = '0.1em';
-      wrapper.style.marginBottom = '-0.1em';
-      line.parentNode.insertBefore(wrapper, line);
-      wrapper.appendChild(line);
-    });
-
-    tl.fromTo(splitTitle.lines, 
-      { yPercent: 110 },
-      {
-        yPercent: 0,
-        duration: 1,
-        stagger: 0.1,
-        ease: 'power3.out'
-      }, "-=0.8"
-    );
-  }
-
   // 2. Scroll Animations for other elements
   const revealElements = document.querySelectorAll('.gs-reveal-up:not(.hero .gs-reveal-up)');
 
