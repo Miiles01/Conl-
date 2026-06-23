@@ -453,25 +453,6 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     transition: filter 0.3s ease;
 }
 
-.mwg_effect075 .circle {
-    transition: opacity 0.3s ease;
-}
-
-.mwg_effect075 .animation-container.has-focus .circle:not(.is-focused) {
-    opacity: 0.3; /* Fade out non-focused cards */
-}
-
-.mwg_effect075 .circle.is-focused {
-    z-index: 50; /* Bring to front */
-}
-
-.mwg_effect075 .circle.is-focused .problem-card {
-    transform: translateY(-55%) scale(1.03) !important; /* Pop up slightly */
-    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-    border: 2px solid var(--color-lime-green);
-    cursor: default;
-}
-
 /* Fix the hover glitch from the global .problem-card */
 .mwg_effect075 .problem-card:hover {
     transform: translateY(-52%); /* Slightly raise from -50% without breaking rotation */

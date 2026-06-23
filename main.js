@@ -145,31 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
             circles.forEach(c => c.classList.remove('on'))
         }
     })
-
-    // Click interactions for focus state
-    circles.forEach(circle => {
-        circle.addEventListener('click', (e) => {
-            const isCurrentlyFocused = circle.classList.contains('is-focused');
-            
-            // Clear focus from all
-            circles.forEach(c => c.classList.remove('is-focused'));
-            animationContainer.classList.remove('has-focus');
-
-            // If it wasn't focused before, focus it now
-            if (!isCurrentlyFocused) {
-                circle.classList.add('is-focused');
-                animationContainer.classList.add('has-focus');
-            }
-            
-            e.stopPropagation(); // prevent document click from immediately clearing it
-        });
-    });
-
-    // Remove focus if clicking anywhere outside the cards
-    document.addEventListener('click', () => {
-        circles.forEach(c => c.classList.remove('is-focused'));
-        animationContainer.classList.remove('has-focus');
-    });
   }
 
   // 3.4 MWG Effect 053 (3D Rotating Text)
