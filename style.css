@@ -1245,15 +1245,32 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     }
     
     /* Wheel Mobile */
+    .mwg_effect053 .container-flip {
+        height: auto;
+        display: block;
+        padding: 2rem 1.5rem;
+    }
+    .mwg_effect053 .paragraphs {
+        position: static;
+        width: 100%;
+        margin-bottom: 3rem;
+        transform: none !important;
+        opacity: 1 !important;
+        text-align: center;
+    }
+    .mwg_effect053 .pin-height {
+        height: auto;
+    }
+
     .mwg_effect040 .parent-circle {
         width: 150vw;
         height: 150vw;
     }
     .mwg_effect040 .parent-circle-left {
-        right: 40%; /* Gives the text labels more room on the left */
+        right: 35%; /* Center of rotation placed correctly so they meet at 65vw */
     }
     .mwg_effect040 .parent-circle-right {
-        left: 45%; /* Brings the icon squares further into the screen */
+        left: 65%; /* Center of rotation placed correctly so they meet at 65vw */
     }
     .mwg_effect040 .media {
         width: 15vw;
