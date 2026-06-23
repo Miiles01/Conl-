@@ -317,39 +317,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. MASKED TEXT REVEAL FOR H1 & H2 (Osmo Code)
+  // 5. SIMPLE REVEAL FOR H1 & H2
   const headings = document.querySelectorAll('h1:not(.sentence), h2:not(.paragraphs)');
   
   headings.forEach(heading => {
-    SplitText.create(heading, {
-      type: "lines, words, chars",
-      linesClass: "line",
-      wordsClass: "word",
-      charsClass: "letter"
-    });
-
-    const lines = heading.querySelectorAll('.line');
-    
-    // Mask the lines by wrapping them in overflow: hidden
-    lines.forEach(line => {
-      const wrapper = document.createElement('div');
-      wrapper.style.overflow = 'hidden';
-      wrapper.style.display = 'block';
-      // Prevent descenders (j, g, p, y) from getting cut off by the mask
-      wrapper.style.paddingBottom = '0.25em';
-      wrapper.style.marginBottom = '-0.25em';
-      line.parentNode.insertBefore(wrapper, line);
-      wrapper.appendChild(line);
-    });
-
     gsap.fromTo(
-      lines,
-      { yPercent: 110 },
+      heading,
+      { y: 30, opacity: 0 },
       { 
-        yPercent: 0, 
+        y: 0, 
+        opacity: 1,
         duration: 0.8, 
-        stagger: 0.08, 
-        ease: "osmo-ease",
+        ease: "power3.out",
         scrollTrigger: {
           trigger: heading,
           start: "top 90%",
