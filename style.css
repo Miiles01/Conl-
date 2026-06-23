@@ -484,7 +484,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 
 /* Modifying .problem-card when inside the animation */
 .mwg_effect075 .problem-card {
-    width: 75vw;
+    width: 68vw; /* Reduced from 75vw to prevent right cutoff */
     max-width: 320px;
     aspect-ratio: 0.75; /* Enforces portrait orientation */
     margin: 0 auto;
@@ -561,7 +561,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 60vh;
+    height: 65vh;
     width: 100%;
 }
 
@@ -570,7 +570,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     width: max-content;
     gap: 6vw; /* Increased gap to separate cards */
     will-change: transform;
-    padding: 0 10vw; /* Removed the massive 50vw empty space */
+    padding: 2rem 10vw; /* Added vertical padding for shadow */
 }
 
 .mwg_effect001 .card {
