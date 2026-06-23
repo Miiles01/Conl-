@@ -426,4 +426,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   );
+
+  // 7. Mobile Menu Toggle
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const iconMenu = document.querySelector('.icon-menu');
+  const iconClose = document.querySelector('.icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-nav__link');
+
+  if (hamburger && mobileMenu) {
+    const toggleMenu = () => {
+      const isOpen = mobileMenu.classList.contains('is-open');
+      if (isOpen) {
+        mobileMenu.classList.remove('is-open');
+        iconMenu.style.display = 'block';
+        iconClose.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      } else {
+        mobileMenu.classList.add('is-open');
+        iconMenu.style.display = 'none';
+        iconClose.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (mobileMenu.classList.contains('is-open')) {
+          toggleMenu();
+        }
+      });
+    });
+  }
 });

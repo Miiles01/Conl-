@@ -1254,8 +1254,8 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     
     /* Wheel Mobile */
     .mwg_effect040 .parent-circle {
-        width: 250vw;
-        height: 250vw;
+        width: 150vw;
+        height: 150vw;
     }
     .mwg_effect040 .media {
         width: 18vw;
@@ -1291,4 +1291,61 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 
 .pricing-features li svg {
   stroke: var(--color-lime-green) !important;
+}
+
+/* Hamburger Menu & Mobile Navigation */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-deep-blue);
+  z-index: 1001; /* Above mobile menu overlay */
+}
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: var(--color-white);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-nav__link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-deep-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav__link:hover, .mobile-nav__link:active {
+  color: var(--color-warm-yellow);
 }
