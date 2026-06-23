@@ -601,15 +601,22 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 .video-placeholder {
   background: var(--color-deep-blue);
   border-radius: var(--radius-lg);
-  aspect-ratio: 16/9;
+  aspect-ratio: 9/16; /* TikTok vertical format for mobile */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center; /* Ensures text is centered */
   color: white;
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 768px) {
+  .video-placeholder {
+    aspect-ratio: 16/9; /* Horizontal format for desktop */
+  }
 }
 
 .video-placeholder::before {
@@ -647,6 +654,8 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 .video-placeholder p {
   color: rgba(255,255,255,0.8);
   z-index: 1;
+  padding: 0 1.5rem; /* Add padding so text doesn't touch edges on mobile */
+  margin-top: 1rem;
 }
 
 /* Methodology Grid */
