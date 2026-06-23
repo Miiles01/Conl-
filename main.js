@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. MWG Effect 075 (Problem Cards Animation)
   const mwgRoot = document.querySelector('.mwg_effect075')
-  if (mwgRoot) {
+  if (mwgRoot && window.innerWidth >= 768) {
     const pinHeight = mwgRoot.querySelector('.pin-height')
     const animationContainer = mwgRoot.querySelector('.animation-container')
     const circlesElement = mwgRoot.querySelector('.circles')

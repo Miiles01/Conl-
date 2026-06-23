@@ -1367,3 +1367,40 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 .mobile-nav__link:hover, .mobile-nav__link:active {
   color: var(--color-warm-yellow);
 }
+
+/* MWG Effect 075 Mobile Disabled Animation */
+@media (max-width: 767px) {
+    .mwg_effect075 .animation-container {
+        height: auto;
+        overflow: visible;
+        display: block;
+        padding: 0 1rem;
+    }
+    .mwg_effect075 .circles {
+        position: static;
+        width: 100%;
+        aspect-ratio: auto;
+        left: auto;
+        top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .mwg_effect075 .circle {
+        position: static;
+        visibility: visible;
+        transform: none !important;
+        height: auto;
+    }
+    .mwg_effect075 .problem-card {
+        width: 100%;
+        max-width: 100%;
+        transform: none !important;
+        margin: 0;
+        aspect-ratio: auto;
+        padding: 1.5rem;
+    }
+    .mwg_effect075 .pin-height {
+        height: auto;
+    }
+}
