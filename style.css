@@ -1245,18 +1245,22 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     }
     
     /* Wheel Mobile */
+    /* 053 Mobile */
     .mwg_effect053 .container-flip {
         height: auto;
-        display: block;
-        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0 1.5rem 2rem 1.5rem;
     }
     .mwg_effect053 .paragraphs {
         position: static;
         width: 100%;
-        margin-bottom: 3rem;
+        margin-bottom: 0;
         transform: none !important;
         opacity: 1 !important;
         text-align: center;
+        display: block;
     }
     .mwg_effect053 .pin-height {
         height: auto;
@@ -1404,5 +1408,15 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     }
     .mwg_effect075 .pin-height {
         height: auto;
+    }
+    
+    /* FAMILIAS / STATS */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+    .testimonial-card {
+        padding: 1.5rem;
     }
 }
