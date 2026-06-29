@@ -372,6 +372,37 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   right: 0;
 }
 
+/* Mobile Hero Carousel */
+.hero-mobile-carousel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  line-height: 0;
+}
+
+.hero-mobile-carousel__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.hero-mobile-carousel__track img {
+  height: 100px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .hero.hero--blue {
   background-color: var(--color-deep-blue);
 }
