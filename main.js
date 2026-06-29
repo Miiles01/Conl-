@@ -426,6 +426,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoId = container.getAttribute('data-video-id');
         container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
         
+        // Auto-pause background music if it's playing
+        const bgM = document.getElementById('bgMusic');
+        const bgMT = document.getElementById('bgMusicToggle');
+        if (bgM && !bgM.paused) {
+          bgM.pause();
+          if (bgMT) bgMT.classList.remove('is-playing');
+        }
+
         this.classList.add('is-playing');
         this.classList.add('has-started');
       }
@@ -459,3 +467,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+  // Background Music Toggle
+  const bgMusic = document.getElementById('bgMusic');
+  const bgMusicToggle = document.getElementById('bgMusicToggle');
+  if (bgMusic && bgMusicToggle) {
+    // Set volume to a reasonable level
+    bgMusic.volume = 0.3;
+    
+    bgMusicToggle.addEventListener('click', () => {
+      if (bgMusic.paused) {
+        bgMusic.play();
+        bgMusicToggle.classList.add('is-playing');
+      } else {
+        bgMusic.pause();
+        bgMusicToggle.classList.remove('is-playing');
+      }
+    });
+  }
