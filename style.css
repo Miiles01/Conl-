@@ -1599,6 +1599,10 @@ body[data-current-theme="dark"] .hero {
 }
 
 /* Smooth color transitions for theme changes */
-h1, h2, h3, h4, p, .badge {
+h1, h2, h3, h4, p, .badge, .hero__trust span {
   transition: color 1.5s ease, background-color 1.5s ease, border-color 1.5s ease;
+}
+
+body[data-current-theme="dark"] .hero__trust span {
+  color: var(--color-white);
 }
