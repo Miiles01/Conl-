@@ -1469,6 +1469,10 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 .video-overlay.has-started {
   background-image: none !important;
   background-color: transparent !important;
+  pointer-events: none !important;
+}
+.custom-play-btn {
+  display: none !important;
 }
 .custom-play-btn {
   position: absolute;
