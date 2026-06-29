@@ -1500,3 +1500,21 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   display: none;
 }
 
+
+/* Responsive Demo Video Toggles */
+@media (max-width: 767px) {
+  .demo-video-desktop {
+    display: none !important;
+  }
+  .demo-video-mobile {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .demo-video-desktop {
+    display: block !important;
+  }
+  .demo-video-mobile {
+    display: none !important;
+  }
+}
