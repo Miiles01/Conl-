@@ -350,7 +350,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   transition: background-color 1.5s ease;
 }
 
-body[data-current-theme="dark"] .hero {
+.hero.hero--blue {
   background-color: var(--color-deep-blue);
 }
 
@@ -1603,6 +1603,14 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   transition: color 1.5s ease, background-color 1.5s ease, border-color 1.5s ease;
 }
 
-body[data-current-theme="dark"] .hero__trust span {
+.hero.hero--blue .hero__trust span,
+.hero.hero--blue h1,
+.hero.hero--blue p {
   color: var(--color-white);
+}
+
+.hero.hero--blue .badge {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--color-white);
+  border-color: rgba(255,255,255,0.2);
 }
