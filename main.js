@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const bgMusicToggle = document.getElementById('bgMusicToggle');
   if (bgMusic && bgMusicToggle) {
     // Set volume to a reasonable level
-    bgMusic.volume = 0.3;
+    bgMusic.volume = 0.5;
     
     bgMusicToggle.addEventListener('click', () => {
       if (bgMusic.paused) {
