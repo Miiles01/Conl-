@@ -391,89 +391,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- VIDEO TESTIMONIALS & SWIPER INITIALIZATION ---
 
-let players = [];
-window.onYouTubeIframeAPIReady = function() {
-  const containers = document.querySelectorAll('.video-container');
-  containers.forEach((container, index) => {
-    const videoId = container.getAttribute('data-video-id');
-    const player = new YT.Player(container.id, {
-      videoId: videoId,
-      playerVars: {
-        controls: 0,
-        rel: 0,
-        modestbranding: 1,
-        showinfo: 0,
-        playsinline: 1
-      },
-      events: {
-        'onStateChange': function(event) {
-          const overlay = document.querySelector(`.video-overlay[data-index="${index}"]`);
-          if (overlay) {
-            if (event.data === YT.PlayerState.PLAYING) {
-              overlay.classList.add('is-playing');
-            } else if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-              overlay.classList.remove('is-playing');
-            }
-          }
-        }
-      }
-    });
-    players.push(player);
-
-    const overlay = document.querySelector(`.video-overlay[data-index="${index}"]`);
-    if(overlay) {
-      overlay.addEventListener('click', () => {
-        if(player && typeof player.getPlayerState === 'function'){
-          const state = player.getPlayerState();
-          if (state === YT.PlayerState.PLAYING) {
-            player.pauseVideo();
-          } else {
-            // Pause all others before playing
-            players.forEach((p, i) => {
-              if (i !== index && p && typeof p.pauseVideo === 'function') {
-                 p.pauseVideo();
-              }
-            });
-            player.playVideo();
-          }
-        }
-      });
-    }
-  });
-};
-
 document.addEventListener('DOMContentLoaded', () => {
+  const sliders = document.querySelectorAll('.swiper-video-container');
+  const overlays = document.querySelectorAll('.video-overlay');
+
+  overlays.forEach(overlay => {
+    overlay.addEventListener('click', function() {
+      // Pause all other videos by clearing their iframes
+      sliders.forEach(container => container.innerHTML = '');
+      overlays.forEach(o => o.classList.remove('is-playing'));
+
+      const container = this.previousElementSibling; // The .swiper-video-container is right before the overlay
+      const videoId = container.getAttribute('data-video-id');
+      
+      container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1&controls=0&rel=0&modestbranding=1&playsinline=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      
+      this.classList.add('is-playing');
+    });
+  });
+
   // Initialize Swiper
   if (typeof Swiper !== 'undefined') {
     const swiper = new Swiper('.video-testimonials-slider', {
       loop: true,
-      slidesPerView: 1,
+      slidesPerView: 1.2,
       spaceBetween: 20,
       centeredSlides: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
       breakpoints: {
         768: {
-          slidesPerView: 2,
+          slidesPerView: 2.2,
           spaceBetween: 30,
         },
         1024: {
-          slidesPerView: 3,
+          slidesPerView: 2.5,
           spaceBetween: 40,
         }
       },
       on: {
         slideChangeTransitionStart: function () {
-          // Pause all videos on slide change
-          if (typeof players !== 'undefined') {
-            players.forEach(p => {
-              if (p && typeof p.pauseVideo === 'function') {
-                p.pauseVideo();
-              }
-            });
-          }
+          // Stop videos when sliding
+          sliders.forEach(container => container.innerHTML = '');
+          overlays.forEach(o => o.classList.remove('is-playing'));
         }
       }
     });

@@ -1424,8 +1424,11 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 /* VIDEO TESTIMONIALS CAROUSEL */
 .video-testimonials-slider {
   width: 100%;
-  padding: 20px 0;
+  padding: 40px 0;
+  margin: -40px 0;
   overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 .video-card {
   position: relative;
@@ -1438,17 +1441,17 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 }
 @media (min-width: 768px) {
   .video-card {
-    aspect-ratio: 16/9; /* Horizontal on desktop if preferred, but YouTube shorts are often 9:16. I will keep 9:16 for consistency unless they are horizontal videos. Let's test with 9:16 */
+    aspect-ratio: 9/16; 
   }
 }
-.video-container {
+.swiper-video-container {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
 }
-.video-container iframe {
+.swiper-video-container iframe {
   width: 100%;
   height: 100%;
   border: none;
@@ -1459,13 +1462,22 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
+  background-size: cover;
+  background-position: center;
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: opacity 0.3s ease;
   z-index: 2;
+}
+.video-overlay::before {
+  content: '';
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.3);
+  z-index: -1;
 }
 .video-overlay.is-playing {
   opacity: 0;
