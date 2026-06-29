@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -420,27 +421,56 @@
             </div>
           </div>
 
-          <div class="testimonials-grid">
-            <div class="testimonial-card gs-reveal-up">
-              <p class="quote">"Llevaba meses buscando actividades en Pinterest. Con Conlú llegué y estaba todo organizado por edad y por área. Mi hijo de 4 años está aprendiendo y yo ya no estoy estresada."</p>
-              <div class="author">
-                <div class="avatar bg-lime">LP</div>
-                <div>
-                  <strong>Laura P.</strong>
-                  <span>Mamá de Mateo (4 años) · México</span>
+          <div class="swiper video-testimonials-slider gs-reveal-up">
+            <div class="swiper-wrapper">
+              <!-- Video 1 -->
+              <div class="swiper-slide">
+                <div class="video-card">
+                  <div class="video-container" id="yt-player-0" data-video-id="q6yGv_VPPlc"></div>
+                  <div class="video-overlay" data-index="0">
+                    <button class="custom-play-btn" aria-label="Reproducir video">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Video 2 -->
+              <div class="swiper-slide">
+                <div class="video-card">
+                  <div class="video-container" id="yt-player-1" data-video-id="1I17YweZlrE"></div>
+                  <div class="video-overlay" data-index="1">
+                    <button class="custom-play-btn" aria-label="Reproducir video">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Video 3 -->
+              <div class="swiper-slide">
+                <div class="video-card">
+                  <div class="video-container" id="yt-player-2" data-video-id="K8EJAN-m4Qo"></div>
+                  <div class="video-overlay" data-index="2">
+                    <button class="custom-play-btn" aria-label="Reproducir video">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Video 4 -->
+              <div class="swiper-slide">
+                <div class="video-card">
+                  <div class="video-container" id="yt-player-3" data-video-id="NN2j1LQchxw"></div>
+                  <div class="video-overlay" data-index="3">
+                    <button class="custom-play-btn" aria-label="Reproducir video">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="testimonial-card gs-reveal-up">
-              <p class="quote">"Empecé Conlú en vacaciones y ya no lo dejaré. Mi hija pregunta todos los días qué actividad toca. Nunca pensé que estructurar el aprendizaje en casa podía ser tan sencillo."</p>
-              <div class="author">
-                <div class="avatar bg-lime">AC</div>
-                <div>
-                  <strong>Ana C.</strong>
-                  <span>Mamá homeschool · Miami, Florida</span>
-                </div>
-              </div>
-            </div>
+            <!-- Botones de navegación (Opcional, Swiper) -->
+            <div class="swiper-button-next" style="color: #65A30D;"></div>
+            <div class="swiper-button-prev" style="color: #65A30D;"></div>
           </div>
         </div>
       </section>
@@ -566,6 +596,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+    <!-- Swiper & YouTube API -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     
     <script type="module" src="/main.js"></script>
   </body>
