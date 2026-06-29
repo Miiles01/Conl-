@@ -1,0 +1,34 @@
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 140.981C0 140.439 0.439318 140 0.981244 140H2C41.2122 140 73 171.788 73 211H70.0188C31.3485 211 0 179.652 0 140.981Z" fill="#92C500"/>
+<path d="M73 237.237C73 206.73 97.7303 182 128.237 182V182C128.658 182 129 182.342 129 182.763V183.763C129 214.27 104.27 239 73.7634 239V239C73.3418 239 73 238.658 73 238.237V237.237Z" fill="#92C500"/>
+<rect x="68" y="207" width="5" height="73" fill="#92C500"/>
+<g clip-path="url(#clip0_2346_464)">
+<rect width="140" height="140" transform="matrix(1 0 0 -1 0 420)" fill="#00BCC4"/>
+<rect x="39" y="280" width="101" height="101" fill="#65D1D1"/>
+<circle cx="93" cy="392" r="20" fill="#65D1D1"/>
+<circle cx="27" cy="330" r="20" fill="#65D1D1"/>
+<circle cx="140" cy="331" r="20" fill="#00BCC4"/>
+</g>
+<rect width="140" height="140" transform="matrix(1 0 0 -1 140 280)" fill="#F7B400"/>
+<path d="M255 210L140 140V280L255 210Z" fill="#FFD15B"/>
+<g clip-path="url(#clip1_2346_464)">
+<rect width="140" height="140" transform="matrix(1 0 0 -1 280 140)" fill="#00BCC4"/>
+<circle cx="70" cy="70" r="70" transform="matrix(1 0 0 -1 280 70)" fill="#576BB1"/>
+<circle cx="70" cy="70" r="70" transform="matrix(1 0 0 -1 280 210)" fill="#576BB1"/>
+</g>
+<g clip-path="url(#clip2_2346_464)">
+<rect width="140" height="140" transform="matrix(1 0 0 -1 140 140)" fill="#FF767E"/>
+<path d="M321.852 41.6868C317.787 37.6201 312.961 34.3942 307.649 32.1932C302.337 29.9922 296.644 28.8594 290.894 28.8594C285.144 28.8594 279.451 29.9922 274.139 32.1932C268.827 34.3942 264.001 37.6201 259.936 41.6868L251.5 50.1227L243.064 41.6868C234.854 33.4763 223.718 28.8636 212.106 28.8636C200.495 28.8636 189.359 33.4763 181.148 41.6868C172.938 49.8974 168.325 61.0333 168.325 72.6447C168.325 84.2562 172.938 95.3921 181.148 103.603L251.5 173.954L321.852 103.603C325.918 99.5379 329.144 94.7117 331.345 89.3999C333.546 84.088 334.679 78.3945 334.679 72.6447C334.679 66.8949 333.546 61.2015 331.345 55.8896C329.144 50.5778 325.918 45.7516 321.852 41.6868Z" fill="#FE4C56"/>
+</g>
+<defs>
+<clipPath id="clip0_2346_464">
+<rect width="140" height="140" fill="white" transform="matrix(1 0 0 -1 0 420)"/>
+</clipPath>
+<clipPath id="clip1_2346_464">
+<rect width="140" height="140" fill="white" transform="matrix(1 0 0 -1 280 140)"/>
+</clipPath>
+<clipPath id="clip2_2346_464">
+<rect width="140" height="140" fill="white" transform="matrix(1 0 0 -1 140 140)"/>
+</clipPath>
+</defs>
+</svg>
