@@ -1566,7 +1566,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 }
 
 .footer__bottom p {
-  color: var(--color-white);
+  color: var(--color-white) !important;
   margin-bottom: 0;
 }
 
