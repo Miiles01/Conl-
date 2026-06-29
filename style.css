@@ -344,9 +344,14 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 .hero {
   padding-top: 150px;
   padding-bottom: var(--space-xl);
-  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-off-white) 100%);
+  background-color: var(--color-white);
   position: relative;
   overflow: hidden;
+  transition: background-color 1.5s ease;
+}
+
+body[data-current-theme="dark"] .hero {
+  background-color: var(--color-deep-blue);
 }
 
 .hero::after {
@@ -1591,4 +1596,9 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     width: 44px;
     height: 44px;
   }
+}
+
+/* Smooth color transitions for theme changes */
+h1, h2, h3, h4, p, .badge {
+  transition: color 1.5s ease, background-color 1.5s ease, border-color 1.5s ease;
 }

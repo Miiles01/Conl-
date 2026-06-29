@@ -485,3 +485,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Hero Background Animation Loop
+  const heroSection = document.querySelector('.hero');
+  if (heroSection) {
+    let isBlue = false;
+    const toggleHeroTheme = () => {
+      isBlue = !isBlue;
+      const newTheme = isBlue ? 'dark' : 'white';
+      
+      heroSection.setAttribute('data-theme', newTheme);
+      
+      // Update body theme so navbar and texts adapt if user is at top
+      if (window.scrollY < window.innerHeight / 2) {
+        document.body.setAttribute('data-current-theme', newTheme);
+      }
+    };
+
+    setTimeout(() => {
+      toggleHeroTheme();
+      setInterval(toggleHeroTheme, 20000);
+    }, 4000);
+  }
