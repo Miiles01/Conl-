@@ -1485,7 +1485,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   position: absolute;
   bottom: 16px;
   left: 16px;
-  background: var(--color-lime);
+  background: var(--color-lime-green);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -1495,7 +1495,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(101, 163, 13, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease, background 0.2s ease;
 }
 .custom-play-btn:hover {
