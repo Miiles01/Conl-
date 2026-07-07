@@ -2114,3 +2114,65 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
     gap: 1rem;
   }
 }
+
+/* --- PLANES (contenido Landing-Padres PDF) --- */
+.plan-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-warm-yellow);
+  background: rgba(252, 193, 96, 0.25);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.75rem;
+}
+
+.plan-quote {
+  font-style: italic;
+  font-size: 0.9375rem !important;
+}
+
+.price-regular {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  text-decoration: line-through;
+  margin-top: 1rem;
+}
+
+.pricing-card .price {
+  margin-top: 0.25rem;
+}
+
+.savings {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #C94A4E;
+  background: var(--color-red-tint);
+  padding: 0.25rem 0.9rem;
+  border-radius: var(--radius-sm);
+  margin-top: 0.75rem;
+}
+
+.pricing-card--featured .price-regular {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-card--featured .savings {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-yellow-light);
+}
+
+.plan-note {
+  font-size: 0.8125rem;
+  text-align: center;
+  color: var(--color-text-light);
+  margin: 1rem 0 0;
+}
+
+.pricing-card--featured .plan-note {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
