@@ -338,21 +338,24 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  // 6. Video Scale Animation on Scroll
-  gsap.fromTo('.video-placeholder',
-    { scale: 0.6, borderRadius: '40px' },
-    {
-      scale: 1,
-      borderRadius: '24px',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.video-section',
-        start: 'top bottom',
-        end: 'center center',
-        scrub: true
+  // 6. Video Scale Animation on Scroll (Swiper demo card)
+  const demoVideoCard = document.querySelector('.video-section .video-card');
+  if (demoVideoCard) {
+    gsap.fromTo(demoVideoCard,
+      { scale: 0.6, borderRadius: '40px' },
+      {
+        scale: 1,
+        borderRadius: '24px',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.video-section',
+          start: 'top bottom',
+          end: 'center center',
+          scrub: true
+        }
       }
-    }
-  );
+    );
+  }
 
   // 7. Mobile Menu Toggle
   const hamburger = document.querySelector('.hamburger');
