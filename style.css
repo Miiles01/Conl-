@@ -1827,13 +1827,13 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   border-radius: var(--radius-pill);
 }
 
-.plan-sheet__title {
+.plan-sheet h3.plan-sheet__title {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   color: var(--color-red-deep);
   margin-bottom: 0.25rem;
 }
 
-.plan-sheet__intelligences {
+.plan-sheet p.plan-sheet__intelligences {
   font-weight: 700;
   color: var(--color-cyan-deep);
   margin-bottom: 1.5rem;
@@ -1917,7 +1917,7 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-warm-yellow);
+  color: var(--color-cyan-deep);
   margin-bottom: 0.25rem;
 }
 
