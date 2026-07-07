@@ -15,6 +15,10 @@
   --color-mint: #F4F7DC;           /* tinte de Verde Lima #D4DE6E */
   --color-cyan-tint: #85D4DA;      /* tinte de Cian #33B8C2 */
   --color-red-tint: #F5B2B3;       /* tinte de Rojo pastel #EF7E81 */
+  /* Tonos oscurecidos para texto con contraste AA */
+  --color-cyan-deep: #1E7E86;      /* Cian para texto sobre blanco */
+  --color-red-deep: #C6494D;       /* Rojo pastel para titulares sobre blanco */
+  --color-red-ink: #8A2E31;        /* Rojo pastel para texto pequeño */
   --color-text-dark: #1F2937;
   --color-text-light: #6B7280;
 
@@ -171,13 +175,13 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
 body[data-current-theme="cream"] { background-color: var(--color-cream); color: var(--color-text-dark); }
 body[data-current-theme="cream"] h1, body[data-current-theme="cream"] h2, body[data-current-theme="cream"] h3, body[data-current-theme="cream"] h4 { color: var(--color-deep-blue); }
 body[data-current-theme="cream"] p { color: var(--color-text-light); }
-body[data-current-theme="cream"] .subtitle { color: var(--color-warm-yellow); }
+body[data-current-theme="cream"] .subtitle { color: var(--color-light-blue); }
 
 /* Mint Theme (tinte de Verde Lima #D4DE6E) */
 body[data-current-theme="mint"] { background-color: var(--color-mint); color: var(--color-text-dark); }
 body[data-current-theme="mint"] h1, body[data-current-theme="mint"] h2, body[data-current-theme="mint"] h3, body[data-current-theme="mint"] h4 { color: var(--color-deep-blue); }
 body[data-current-theme="mint"] p { color: var(--color-text-light); }
-body[data-current-theme="mint"] .subtitle { color: var(--color-lime-green); }
+body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
 
 .text-lime { color: var(--color-lime-green); }
 .text-orange { color: var(--color-warm-yellow); }
@@ -1809,7 +1813,7 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-cyan);
+  color: var(--color-cyan-deep);
 }
 
 .plan-sheet__week {
@@ -1825,13 +1829,13 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
 
 .plan-sheet__title {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  color: var(--color-red-pastel);
+  color: var(--color-red-deep);
   margin-bottom: 0.25rem;
 }
 
 .plan-sheet__intelligences {
   font-weight: 700;
-  color: var(--color-cyan);
+  color: var(--color-cyan-deep);
   margin-bottom: 1.5rem;
 }
 
@@ -1962,7 +1966,7 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
 }
 
 .tracking-card__head h3 {
-  color: var(--color-cyan);
+  color: var(--color-cyan-deep);
   font-size: 1.5rem;
   margin-bottom: 0;
 }
@@ -2122,8 +2126,8 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-warm-yellow);
-  background: rgba(252, 193, 96, 0.25);
+  color: var(--color-deep-blue);
+  background: rgba(252, 193, 96, 0.3);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-pill);
   margin-bottom: 0.75rem;
@@ -2150,8 +2154,8 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   display: inline-block;
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #C94A4E;
-  background: var(--color-red-tint);
+  color: var(--color-red-ink);
+  background: rgba(239, 126, 129, 0.16);
   padding: 0.25rem 0.9rem;
   border-radius: var(--radius-sm);
   margin-top: 0.75rem;
