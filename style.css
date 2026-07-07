@@ -1726,3 +1726,57 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
   position: relative;
   z-index: 2;
 }
+
+/* --- ÁREAS DE DESARROLLO --- */
+.dev-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .dev-areas__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.dev-area-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(47, 47, 119, 0.06);
+  text-align: center;
+  transition: transform var(--transition-smooth);
+}
+
+.dev-area-card:hover {
+  transform: translateY(-4px);
+}
+
+@media (min-width: 768px) {
+  .dev-area-card {
+    padding: 2rem;
+  }
+}
+
+.dev-area-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.dev-area-card h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.35rem;
+}
+
+.dev-area-card p {
+  font-size: 0.9375rem;
+  margin-bottom: 0;
+}
