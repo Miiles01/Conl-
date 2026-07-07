@@ -1,11 +1,20 @@
 :root {
-  /* Brand Colors */
-  --color-deep-blue: #3A4A8A;
-  --color-lime-green: #9DC423;
-  --color-warm-yellow: #EFA624;
-  --color-light-blue: #A0B9F6;
+  /* Brand Colors — Conlú Growth (Jaselú) · Uso del Logo.pdf */
+  --color-deep-blue: #2F2F77;      /* Azul marca (logotipo) */
+  --color-lime-green: #9DC423;     /* Verde Amarillento */
+  --color-warm-yellow: #EFA624;    /* Naranja */
+  --color-light-blue: #5B6AAB;     /* Azul Apagado */
   --color-off-white: #F7F0F3;
   --color-white: #FFFFFF;
+  --color-lime-light: #D4DE6E;     /* Verde Lima */
+  --color-yellow-light: #FCC160;   /* Amarillo */
+  --color-red-pastel: #EF7E81;     /* Rojo pastel */
+  --color-cyan: #33B8C2;           /* Cian */
+  /* Tintes derivados de la paleta (fondos de sección) */
+  --color-cream: #FDF3E3;          /* tinte de Amarillo #FCC160 */
+  --color-mint: #F4F7DC;           /* tinte de Verde Lima #D4DE6E */
+  --color-cyan-tint: #85D4DA;      /* tinte de Cian #33B8C2 */
+  --color-red-tint: #F5B2B3;       /* tinte de Rojo pastel #EF7E81 */
   --color-text-dark: #1F2937;
   --color-text-light: #6B7280;
 
@@ -158,6 +167,18 @@ body[data-current-theme="dark"] .subtitle { color: var(--color-lime-green); }
 body[data-current-theme="dark"] .stat h3 { color: var(--color-lime-green); }
 body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,255,255,0.05); }
 
+/* Cream Theme (tinte de Amarillo #FCC160) */
+body[data-current-theme="cream"] { background-color: var(--color-cream); color: var(--color-text-dark); }
+body[data-current-theme="cream"] h1, body[data-current-theme="cream"] h2, body[data-current-theme="cream"] h3, body[data-current-theme="cream"] h4 { color: var(--color-deep-blue); }
+body[data-current-theme="cream"] p { color: var(--color-text-light); }
+body[data-current-theme="cream"] .subtitle { color: var(--color-warm-yellow); }
+
+/* Mint Theme (tinte de Verde Lima #D4DE6E) */
+body[data-current-theme="mint"] { background-color: var(--color-mint); color: var(--color-text-dark); }
+body[data-current-theme="mint"] h1, body[data-current-theme="mint"] h2, body[data-current-theme="mint"] h3, body[data-current-theme="mint"] h4 { color: var(--color-deep-blue); }
+body[data-current-theme="mint"] p { color: var(--color-text-light); }
+body[data-current-theme="mint"] .subtitle { color: var(--color-lime-green); }
+
 .text-lime { color: var(--color-lime-green); }
 .text-orange { color: var(--color-warm-yellow); }
 
@@ -264,7 +285,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   padding: 0.5rem 1rem;
   padding: 0.5rem 1rem;
   border-radius: 100px;
-  box-shadow: 0 10px 40px rgba(58, 74, 138, 0.08);
+  box-shadow: 0 10px 40px rgba(47, 47, 119, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -414,7 +435,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   right: -20%;
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(160,185,246,0.2) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(91,106,171,0.2) 0%, rgba(255,255,255,0) 70%);
   border-radius: 50%;
   z-index: 0;
 }
@@ -536,7 +557,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
     background: var(--color-white);
     padding: 2rem;
     border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(58, 74, 138, 0.1);
+    box-shadow: 0 10px 40px rgba(47, 47, 119, 0.1);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -635,12 +656,12 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(0,0,0,0.03);
-  box-shadow: 0 15px 35px rgba(58, 74, 138, 0.08); /* Permanent shadow prevents overlapping white cards from looking "cut" */
+  box-shadow: 0 15px 35px rgba(47, 47, 119, 0.08); /* Permanent shadow prevents overlapping white cards from looking "cut" */
   transition: box-shadow var(--transition-smooth);
 }
 
 .solution-card:hover {
-  box-shadow: 0 25px 50px rgba(58, 74, 138, 0.12);
+  box-shadow: 0 25px 50px rgba(47, 47, 119, 0.12);
 }
 
 .solution-card__icon {
@@ -688,7 +709,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(160,185,246,0.2) 0%, rgba(157,196,35,0.2) 100%);
+  background: linear-gradient(45deg, rgba(91,106,171,0.2) 0%, rgba(157,196,35,0.2) 100%);
 }
 
 .play-btn {
@@ -876,7 +897,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   background: var(--color-deep-blue);
   color: var(--color-white);
   border: none;
-  box-shadow: 0 20px 40px rgba(58, 74, 138, 0.15);
+  box-shadow: 0 20px 40px rgba(47, 47, 119, 0.15);
   z-index: 1;
 }
 
@@ -1028,7 +1049,7 @@ body[data-current-theme="dark"] .video-placeholder { background-color: rgba(255,
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 20px 40px rgba(58, 74, 138, 0.05);
+  box-shadow: 0 20px 40px rgba(47, 47, 119, 0.05);
 }
 
 .email-form {
