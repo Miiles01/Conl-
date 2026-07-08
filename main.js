@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
     // 3.5 MWG Effect 001 (Horizontal Scroll Cards)
   const mwg001 = document.querySelector('.mwg_effect001');
-  if (mwg001) {
+  if (mwg001 && window.innerWidth >= 768) {
     const container = mwg001.querySelector('.horizontal-container');
     const cardsContainer = mwg001.querySelector('.cards');
     const cardsList = mwg001.querySelectorAll('.card');

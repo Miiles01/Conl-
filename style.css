@@ -655,6 +655,39 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
     }
 }
 
+/* Mobile: sin pin GSAP — carrusel horizontal con swipe táctil (scroll nativo + snap) */
+@media (max-width: 767px) {
+    .mwg_effect001 { overflow: visible; }
+    .mwg_effect001 .horizontal-container {
+        min-height: 0;
+        padding: 1rem 0;
+        overflow: visible;
+    }
+    .mwg_effect001 .cards {
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+        gap: 1rem;
+        padding: 1.75rem 1.5rem 3.25rem; /* espacio extra para que no se corte la sombra de las cards */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 1.5rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+    }
+    .mwg_effect001 .cards::-webkit-scrollbar { display: none; } /* WebKit */
+    .mwg_effect001 .card {
+        flex: 0 0 auto;
+        width: 80vw;
+        max-width: 320px;
+        scroll-snap-align: center;
+    }
+    /* Ocultar las tarjetas espaciadoras invisibles */
+    .mwg_effect001 .cards > .card:not(.solution-card) {
+        display: none;
+    }
+}
+
 .solution-card {
   background: var(--color-white);
   padding: 2.5rem;
