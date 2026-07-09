@@ -1393,6 +1393,10 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
         gap: 0.5rem;
         padding: 0 1.5rem 2rem 1.5rem;
     }
+    .mwg_effect053 .section-header {
+        transform: none !important;
+        margin-bottom: 0.5rem;
+    }
     .mwg_effect053 .paragraphs {
         position: static;
         width: 100%;
