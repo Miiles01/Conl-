@@ -686,6 +686,27 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
     .mwg_effect001 .cards > .card:not(.solution-card) {
         display: none;
     }
+
+    /* Testimonios: carrusel horizontal con swipe táctil (mismo patrón que mwg_effect001) */
+    .testimonials-cards {
+        display: flex !important;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 0 var(--space-md);
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 1rem;
+        margin: 40px calc(-1 * var(--space-md)) 0;
+        padding: 1.75rem var(--space-md) 3.25rem;
+    }
+    .testimonials-cards::-webkit-scrollbar { display: none; }
+    .testimonials-cards .testimonial-card {
+        flex: 0 0 auto;
+        width: 80vw;
+        max-width: 320px;
+        scroll-snap-align: center;
+    }
 }
 
 .solution-card {
@@ -882,6 +903,7 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
 .avatar {
   width: 48px;
   height: 48px;
+  flex-shrink: 0;
   border-radius: 50%;
   display: flex;
   align-items: center;
