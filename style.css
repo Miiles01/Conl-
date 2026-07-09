@@ -2239,3 +2239,34 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
 .pricing-card--featured .plan-note {
   color: rgba(255, 255, 255, 0.7) !important;
 }
+
+/* --- REDUCED MOBILE SPACING --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0 !important;
+  }
+  .section-header {
+    margin-bottom: 2rem !important;
+  }
+  /* Reduce spacing between elements in split views */
+  .split-content .media, 
+  .split-content .image-wrapper,
+  .video-container {
+    margin-top: 1.5rem !important;
+  }
+  /* Reduce spacing around cards/blocks like FAQ and Guarantee */
+  .faq-section .gs-reveal-up,
+  .cta-final .gs-reveal-up,
+  .cta-box {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    padding: 2rem 1.5rem !important;
+  }
+  /* Grids */
+  .intelligences-grid, .grid, .stats-grid, .testimonials-cards {
+    gap: 1.5rem !important;
+  }
+  .stats-grid {
+    margin-bottom: 2rem !important;
+  }
+}
