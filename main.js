@@ -465,6 +465,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+
+    const textSwiper = new Swiper('.text-testimonials-slider', {
+      loop: true,
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      centeredSlides: true,
+      pagination: {
+        el: '.text-pagination',
+        clickable: true,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+          centeredSlides: false,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+          centeredSlides: false,
+        }
+      }
+    });
   }
 });
 
