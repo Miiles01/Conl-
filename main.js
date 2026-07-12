@@ -69,57 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. MWG Effect 075 (Problem Cards Animation)
-  const mwgRoot = document.querySelector('.mwg_effect075')
-  if (mwgRoot && window.innerWidth >= 768) {
-    const pinHeight = mwgRoot.querySelector('.pin-height')
-    const animationContainer = mwgRoot.querySelector('.animation-container')
-    const circlesElement = mwgRoot.querySelector('.circles')
-    const circles = mwgRoot.querySelectorAll('.circle')
-    const angle = 5
-
-    let currentIndex = -1
-
-    ScrollTrigger.create({
-        trigger: pinHeight,
-        start: 'top top',
-        end: 'bottom bottom',
-        pin: animationContainer,
-        scrub: true,
-        onUpdate: self => {
-            const index = Math.floor(self.progress * (circles.length));
-
-            if(index !== currentIndex && index < circles.length) {
-                if(index > currentIndex) {
-                    circles[index].classList.add('on')
-                    gsap.set(circles[index], {
-                        rotation: (index) * angle
-                    })
-                    gsap.from(circles[index], {
-                        scale: 0.94,
-                        ease: 'elastic.out(0.6, 0.3)',
-                        duration: 0.5
-                    })
-                } else if(index < currentIndex) {
-                    circles[currentIndex].classList.remove('on')
-                }
-
-                gsap.to(circlesElement, {
-                    rotation: - index * angle + (angle / 2) * index,
-                    ease: 'elastic.out(0.6, 0.3)',
-                    duration: 0.5
-                })
-
-                currentIndex = index
-            }
-        },
-        onLeaveBack: () => {
-            currentIndex = -1
-            circles.forEach(c => c.classList.remove('on'))
-        }
-    })
-  }
-
   // 3.4 MWG Effect 053 (3D Rotating Text)
   const root053 = document.querySelector('.mwg_effect053')
   if (root053 && window.innerWidth >= 768) {
@@ -229,82 +178,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-    // 3.6 MWG Effect 040 Dual Wheel Animation
-    const root040 = document.querySelector('.mwg_effect040');
-    if (root040) {
-        gsap.to('.scroll', {
-            autoAlpha:0,
-            duration:0.2,
-            scrollTrigger: {
-                trigger:'.mwg_effect040',
-                start:'top top',
-                end:'top top-=1',
-                toggleActions: "play none reverse none"
-            }
-        });
-
-        const leftCircle = root040.querySelector('.parent-circle-left');
-        const leftItems = leftCircle.querySelectorAll('.circle');
-
-        const rightCircle = root040.querySelector('.parent-circle-right');
-        const rightItems = rightCircle.querySelectorAll('.circle');
-
-        const angle = 14;
-        const pinHeight = root040.querySelector('.pin-height');
-
-        leftItems.forEach((el, index) => {
-            gsap.set(el, {rotation: index * angle});
-            gsap.set(el.querySelector('.label'), {rotation: -index * angle, yPercent: -50});
-        });
-        rightItems.forEach((el, index) => {
-            gsap.set(el, {rotation: index * angle});
-            gsap.set(el.querySelector('.media'), {rotation: -index * angle, yPercent: -50});
-        });
-
-        gsap.to(leftCircle, {
-            rotation: -(180 + angle * leftItems.length),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: pinHeight,
-                pin: '.mwg_effect040 .container',
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: true
-            }
-        });
-        gsap.to(leftCircle.querySelectorAll('.label'), {
-            rotation: '+=' + (180 + angle * leftItems.length),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: pinHeight,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: true
-            }
-        });
-
-        gsap.to(rightCircle, {
-            rotation: -(180 + angle * leftItems.length),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: pinHeight,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: true
-            }
-        });
-        gsap.to(rightCircle.querySelectorAll('.media'), {
-            rotation: '+=' + (180 + angle * leftItems.length),
-            ease: 'none',
-            scrollTrigger: {
-                trigger: pinHeight,
-                start: 'top top',
-                end: 'bottom bottom',
-                scrub: true
-            }
-        });
-    }
-
 // 4. Color Change (Scroll Chain)
   const themeSections = document.querySelectorAll('[data-theme]');
   themeSections.forEach(section => {
@@ -339,20 +212,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 6. Video Scale Animation on Scroll
-  gsap.fromTo('.video-placeholder',
-    { scale: 0.6, borderRadius: '40px' },
-    {
-      scale: 1,
-      borderRadius: '24px',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.video-section',
-        start: 'top bottom',
-        end: 'center center',
-        scrub: true
+  if (document.querySelector('.demo-split__media')) {
+    gsap.fromTo('.demo-split__media',
+      { scale: 0.85 },
+      {
+        scale: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.video-section',
+          start: 'top bottom',
+          end: 'center center',
+          scrub: true
+        }
       }
-    }
-  );
+    );
+  }
 
   // 7. Mobile Menu Toggle
   const hamburger = document.querySelector('.hamburger');
@@ -460,3 +334,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+// Fachadas de video: círculo verde + play blanco; al clic reproducen CON sonido y controles
+document.querySelectorAll('.video-facade[data-video-id]').forEach(facade => {
+  facade.addEventListener('click', () => {
+    const id = facade.getAttribute('data-video-id');
+    facade.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&controls=1&rel=0&modestbranding=1&playsinline=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+    facade.classList.add('is-playing');
+  }, { once: true });
+});
+
+document.querySelectorAll('.video-facade-local').forEach(facade => {
+  const video = facade.querySelector('video');
+  if (!video) return;
+  facade.addEventListener('click', () => {
+    video.muted = false;
+    video.volume = 1;
+    video.setAttribute('controls', '');
+    video.play();
+    facade.classList.add('is-playing');
+  }, { once: true });
+});

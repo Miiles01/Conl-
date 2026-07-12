@@ -491,97 +491,70 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   color: var(--color-deep-blue);
 }
 
-/* MWG Effect 075 Animation Container */
-.mwg_effect075 {
-    position: relative;
-    width: 100%;
-    margin-top: 4rem;
+/* Cards del problema: estaticas, coloridas, con iconos */
+.problem-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+  max-width: 900px;
+  margin: 4rem auto 0;
 }
 
-.mwg_effect075 .pin-height {
-    height: 500vh; /* Extended scroll height to slow down animation */
-}
-
-.mwg_effect075 .animation-container {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.mwg_effect075 .circles {
-    position: absolute;
-    width: 250%; /* Large circle */
-    aspect-ratio: 1;
-    left: -75%;
-    top: 50vh;
-}
-
-@media (min-width: 768px) {
-  .mwg_effect075 .circles {
-      width: 300%;
-      left: -100%;
+@media (max-width: 767px) {
+  .problem-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
   }
 }
 
-.mwg_effect075 .circle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
+.problem-static-card {
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
-.mwg_effect075 .circle.on {
-    visibility: visible;
+.problem-static-card__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Interaction States */
-.mwg_effect075 .circles {
-    transition: filter 0.3s ease;
+.problem-static-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-/* Fix the hover glitch from the global .problem-card */
-.mwg_effect075 .problem-card:hover {
-    transform: translateY(-52%); /* Slightly raise from -50% without breaking rotation */
+.problem-static-card h3 {
+  font-size: 1.15rem;
+  color: var(--color-deep-blue);
+  margin: 0;
 }
 
-/* Prevent hover from overriding the focused card */
-.mwg_effect075 .circle.is-focused .problem-card:hover {
-    transform: translateY(-55%) scale(1.03) !important;
+.problem-static-card p {
+  margin: 0;
+  color: var(--color-text-dark);
+  opacity: 0.8;
 }
 
-/* Modifying .problem-card when inside the animation */
-.mwg_effect075 .problem-card {
-    width: 68vw; /* Reduced from 75vw to prevent right cutoff */
-    max-width: 320px;
-    aspect-ratio: 0.75; /* Enforces portrait orientation */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transform: translateY(-50%); /* Crucial to sit at the top of the arc */
-    background: var(--color-white);
-    padding: 2rem;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 10px 40px rgba(47, 47, 119, 0.1);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
+.problem-static-card--lavanda { background: rgba(91, 106, 171, 0.10); }
+.problem-static-card--lavanda .problem-static-card__icon { color: var(--color-light-blue); background: rgba(91, 106, 171, 0.14); }
 
-.mwg_effect075 .problem-card__icon {
-    margin-bottom: 1rem;
-}
+.problem-static-card--durazno { background: rgba(252, 193, 96, 0.16); }
+.problem-static-card--durazno .problem-static-card__icon { color: var(--color-red-deep); background: rgba(239, 126, 129, 0.14); }
 
-@media (min-width: 768px) {
-    .mwg_effect075 .problem-card {
-        width: 22vw;
-        max-width: 360px;
-        padding: 2.5rem;
-    }
-}
+.problem-static-card--azul { background: rgba(51, 184, 194, 0.10); }
+.problem-static-card--azul .problem-static-card__icon { color: var(--color-cyan-deep); background: rgba(51, 184, 194, 0.14); }
+
+.problem-static-card--verde { background: var(--color-mint); }
+.problem-static-card--verde .problem-static-card__icon { color: var(--color-lime-green); background: rgba(157, 196, 35, 0.16); }
 
 .problem-card {
   background: var(--color-white);
@@ -1308,6 +1281,23 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
     color: var(--color-warm-yellow);
 }
 
+/* Imagen explicativa de las 12 inteligencias (reemplaza la rueda animada) */
+.intelligences-explainer-img {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 767px) {
+  .intelligences-explainer-img {
+    margin-top: 2rem;
+    border-radius: var(--radius-md);
+  }
+}
+
 /* MWG Effect 040 Dual Wheel */
 .intelligences-wheel {
     width: 100%;
@@ -1547,39 +1537,6 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
 
 /* MWG Effect 075 Mobile Disabled Animation */
 @media (max-width: 767px) {
-    .mwg_effect075 .animation-container {
-        height: auto;
-        overflow: visible;
-        display: block;
-        padding: 0 1rem;
-    }
-    .mwg_effect075 .circles {
-        position: static;
-        width: 100%;
-        aspect-ratio: auto;
-        left: auto;
-        top: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    .mwg_effect075 .circle {
-        position: static;
-        visibility: visible;
-        transform: none !important;
-        height: auto;
-    }
-    .mwg_effect075 .problem-card {
-        width: 100%;
-        max-width: 100%;
-        transform: none !important;
-        margin: 0;
-        aspect-ratio: auto;
-        padding: 1.5rem;
-    }
-    .mwg_effect075 .pin-height {
-        height: auto;
-    }
     
     /* FAMILIAS / STATS */
     .stats-grid {
@@ -1681,6 +1638,129 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   display: none !important;
 }
 
+
+/* Demo en dos columnas: texto izquierda, video derecha */
+.demo-split {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.demo-split__text h2 {
+  margin: 0.75rem 0 1rem;
+}
+
+.demo-split__text p {
+  opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+  .demo-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .demo-split__text .subtitle {
+    display: block;
+  }
+}
+
+/* Fachada de video: imagen pausada + círculo verde con play blanco */
+.video-facade,
+.video-facade-local {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-deep-blue);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.video-facade {
+  aspect-ratio: 16 / 9;
+}
+
+.video-facade-local {
+  aspect-ratio: 9 / 16;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.video-facade img,
+.video-facade iframe,
+.video-facade-local video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+
+.play-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-lime-green);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease;
+}
+
+.play-circle svg {
+  width: 36px;
+  height: 36px;
+  margin-left: 4px;
+}
+
+.play-circle:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.is-playing .play-circle {
+  display: none;
+}
+
+/* Fachadas dentro de tarjetas de testimonio: radio menor y sin sombra extra */
+.testimonial-card .video-facade {
+  border-radius: 8px;
+  box-shadow: none;
+  flex-grow: 1;
+}
+
+.testimonial-card .play-circle {
+  width: 64px;
+  height: 64px;
+}
+
+.testimonial-card .play-circle svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 767px) {
+  .play-circle {
+    width: 68px;
+    height: 68px;
+  }
+  .play-circle svg {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 /* Responsive Demo Video Toggles */
 @media (max-width: 767px) {
