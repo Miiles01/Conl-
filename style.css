@@ -125,9 +125,14 @@ a {
 }
 
 .section {
-  padding: clamp(8rem, 15vw, 16rem) 0;
+  padding: clamp(5rem, 8vw, 9rem) 0;
   position: relative;
   z-index: 2;
+}
+
+/* La sección del carrusel "¿Qué incluye?" (mwg_effect001 pineado) conserva el padding amplio original */
+.solution.section {
+  padding: clamp(8rem, 15vw, 16rem) 0;
 }
 
 /* --- THEME SCROLL CHAIN LOGIC --- */
