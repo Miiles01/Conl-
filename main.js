@@ -261,6 +261,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 8. Smooth scrolling for anchor links with Lenis
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        // Use lenis to scroll to the element with an offset for the fixed header
+        lenis.scrollTo(targetElement, { offset: -80 });
+      }
+    });
+  });
 });
 
 // --- VIDEO TESTIMONIALS & SWIPER INITIALIZATION ---
