@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Pacifico';
+  src: url('/fonts/Pacifico-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.highlight-pacifico {
+  font-family: 'Pacifico', cursive;
+  font-weight: normal;
+  color: var(--color-warm-yellow);
+  display: inline-block;
+  padding: 0 0.1em;
+  overflow: visible;
+  line-height: 1.1;
+  text-transform: none; /* In case the title is uppercase */
+}
+
 :root {
   /* Brand Colors — Conlú Growth (Conlú) · Uso del Logo.pdf */
   --color-deep-blue: #2F2F77;      /* Azul marca (logotipo) */
