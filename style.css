@@ -240,13 +240,17 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
 }
 
 .tag {
-  display: inline-block;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 0.25rem 0.75rem;
-  background-color: var(--color-off-white);
-  border-radius: var(--radius-pill);
-  color: var(--color-deep-blue);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  color: var(--color-text-light);
   margin-top: var(--space-sm);
 }
 
