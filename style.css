@@ -1288,7 +1288,6 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   max-width: 1100px;
   margin: 3rem auto 0;
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 767px) {
