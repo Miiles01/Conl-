@@ -418,6 +418,14 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   max-width: 1200px;
 }
 
+.hero-split__left {
+  text-align: center;
+}
+
+.hero-split__left .hero__actions {
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   .hero-split__left {
     padding-top: 2rem;
@@ -431,6 +439,10 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   }
   .hero-split__left {
     padding-top: 4rem;
+    text-align: left;
+  }
+  .hero-split__left .hero__actions {
+    justify-content: flex-start;
   }
 }
 
