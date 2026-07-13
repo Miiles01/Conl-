@@ -2375,3 +2375,13 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
     margin-bottom: 2rem !important;
   }
 }
+
+details > summary {
+  list-style: none !important;
+}
+details > summary::-webkit-details-marker {
+  display: none !important;
+}
+details > summary::marker {
+  display: none !important;
+}
