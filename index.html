@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script type="module" crossorigin src="./assets/index-BrHLuKm4.js"></script>
+    <script type="module" crossorigin src="./assets/index-BQ5_R_Dx.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-CdDNE6m9.css">
   </head>
   <body>
@@ -820,8 +820,11 @@
             <h2>Compártenos tu correo y recibe 5 actividades gratis</h2>
             <p>5 actividades diseñadas para las áreas de desarrollo más importantes de tu hijo o hija esta semana. Sin registro complicado — solo tu email.</p>
             
-            <form class="email-form">
-              <input type="email" placeholder="Tu correo electrónico" required>
+            <form class="email-form" id="download-form" novalidate>
+              <div style="flex: 1; position: relative;">
+                <input type="email" id="download-email" placeholder="Tu correo electrónico" required style="width: 100%;">
+                <div id="download-error" style="display: none; color: #EF7E81; font-size: 0.85rem; position: absolute; bottom: -20px; left: 16px; text-align: left; font-weight: 600; white-space: nowrap;">Ingresa un correo válido con @</div>
+              </div>
               <button type="submit" class="btn btn--primary">Descargar gratis</button>
             </form>
             
