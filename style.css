@@ -248,10 +248,9 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  padding: 0.25rem 0.5rem;
+  padding: 0;
   background-color: transparent;
-  border: 1px solid rgba(0,0,0,0.15);
-  border-radius: 4px;
+  border: none;
   color: var(--color-text-light);
   margin-top: var(--space-sm);
 }
