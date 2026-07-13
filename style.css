@@ -417,10 +417,19 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   max-width: 1200px;
 }
 
+@media (min-width: 768px) {
+  .hero-split__left {
+    padding-top: 2rem;
+  }
+}
+
 @media (min-width: 992px) {
   .hero-split__grid {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
+  }
+  .hero-split__left {
+    padding-top: 4rem;
   }
 }
 
