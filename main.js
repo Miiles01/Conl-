@@ -369,4 +369,41 @@ document.querySelectorAll('.video-facade-local').forEach(facade => {
     video.play();
     facade.classList.add('is-playing');
   }, { once: true });
+
+  // Download Form Logic
+  const downloadForm = document.getElementById('download-form');
+  const downloadEmail = document.getElementById('download-email');
+  const downloadError = document.getElementById('download-error');
+
+  if (downloadForm && downloadEmail && downloadError) {
+    downloadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = downloadEmail.value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      
+      if (!email || !emailRegex.test(email)) {
+        downloadError.style.display = 'block';
+        downloadEmail.style.borderColor = '#EF7E81';
+      } else {
+        downloadError.style.display = 'none';
+        downloadEmail.style.borderColor = 'rgba(0,0,0,0.1)';
+        
+        // Trigger download
+        const a = document.createElement('a');
+        a.href = './Conlu-Actividades-Gratis.zip';
+        a.download = 'Conlu-Actividades-Gratis.zip';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+
+        downloadEmail.value = '';
+        downloadEmail.placeholder = '¡Gracias! Descarga iniciada.';
+      }
+    });
+
+    downloadEmail.addEventListener('input', () => {
+      downloadError.style.display = 'none';
+      downloadEmail.style.borderColor = 'rgba(0,0,0,0.1)';
+    });
+  }
 });
