@@ -1788,10 +1788,24 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
 }
 
 /* Fachadas dentro de tarjetas de testimonio: radio menor y sin sombra extra */
+.testimonials-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+@media (max-width: 768px) {
+  .testimonials-cards {
+    gap: 0 !important;
+  }
+  .testimonials-cards .testimonial-card {
+    flex-shrink: 0;
+  }
+}
+
 .testimonial-card .video-facade {
   border-radius: 8px;
   box-shadow: none;
-  flex-grow: 1;
 }
 
 .testimonial-card .play-circle {
