@@ -2422,17 +2422,21 @@ details > summary::marker {
     transform: translateY(-50%);
     width: 44px;
     height: 44px;
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
+    background-color: var(--color-primary) !important;
+    color: white !important;
+    border: none !important;
     border-radius: 50%;
     z-index: 10;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0;
   }
   .mobile-scroll-arrow svg {
     width: 24px;
     height: 24px;
+    stroke: white !important;
   }
   .mobile-scroll-arrow.left {
     left: -10px;
