@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <script type="module" crossorigin src="./assets/index-SifY2ubh.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DFlGIhKl.css">
+    <script type="module" crossorigin src="./assets/index-C7M3lD3O.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D33izNwU.css">
   </head>
   <body>
     <!-- HEADER -->
@@ -658,8 +658,13 @@
           </div>
         </div>
 
-        <div class="container">
-          <div class="testimonials-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+        <div class="container" style="position: relative;">
+          <!-- Controles móviles -->
+          <button class="mobile-scroll-arrow left" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          
+          <div class="testimonials-cards" id="testimonialsCarousel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
             <div class="testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
               <div class="video-facade" data-video-id="NN2j1LQchxw">
                 <img src="https://img.youtube.com/vi/NN2j1LQchxw/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
@@ -685,6 +690,10 @@
               </div>
             </div>
           </div>
+          
+          <button class="mobile-scroll-arrow right" aria-label="Siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
 
         <!-- BONO INCLUIDO EN LOS 3 PLANES (texto real del PDF, integrado sin nueva sección) -->
@@ -786,7 +795,7 @@
                 <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="min-width: 24px; transition: transform 0.3s ease;"><polyline points="6 9 12 15 18 9"/></svg>
               </summary>
               <div style="padding: 0 25px 25px 25px;">
-                <p style="margin: 0; font-size: 15px; opacity: 0.8;">Acceso inmediato en Conlú Descubre y Crece; en Florece te recibimos con una sesión de bienvenida.</p>
+                <p style="margin: 0; font-size: 15px; opacity: 0.8;">Acceso inmediato a la plataforma de Conlú con todos los contenidos audiovisuales e imprimibles.</p>
               </div>
             </details>
           </div>
@@ -810,7 +819,7 @@
         <div class="container">
 
           <div class="cta-box gs-reveal-up">
-            <span class="subtitle center">ANTES DE DECIDIR</span>
+
             <h2>Compártenos tu correo y recibe 5 actividades gratis</h2>
             <p>5 actividades diseñadas para las áreas de desarrollo más importantes de tu hijo o hija esta semana. Sin registro complicado — solo tu email.</p>
             
