@@ -415,11 +415,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollRightBtn = document.querySelector('.mobile-scroll-arrow.right');
 
   if (testimonialsCarousel && scrollLeftBtn && scrollRightBtn) {
+    const getScrollAmount = () => {
+      const card = testimonialsCarousel.querySelector('.testimonial-card');
+      return card ? card.offsetWidth + 16 : 320;
+    };
+
     scrollLeftBtn.addEventListener('click', () => {
-      testimonialsCarousel.scrollBy({ left: -320, behavior: 'smooth' });
+      testimonialsCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
     });
     scrollRightBtn.addEventListener('click', () => {
-      testimonialsCarousel.scrollBy({ left: 320, behavior: 'smooth' });
+      testimonialsCarousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
   }
 });
