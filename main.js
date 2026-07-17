@@ -423,30 +423,38 @@ document.addEventListener('DOMContentLoaded', () => {
       return card ? card.offsetWidth + 16 : 320;
     };
 
-    const updateArrowsVisibility = () => {
-      const maxScrollLeft = testimonialsCarousel.scrollWidth - testimonialsCarousel.clientWidth;
-      
-      if (testimonialsCarousel.scrollLeft <= 5) {
-        scrollLeftBtn.style.opacity = '0';
-        scrollLeftBtn.style.pointerEvents = 'none';
-      } else {
-        scrollLeftBtn.style.opacity = '1';
-        scrollLeftBtn.style.pointerEvents = 'auto';
-      }
+    const cards = testimonialsCarousel.querySelectorAll('.testimonial-card');
+    
+    if (cards.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.target === cards[0]) {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+              scrollLeftBtn.style.opacity = '0';
+              scrollLeftBtn.style.pointerEvents = 'none';
+            } else {
+              scrollLeftBtn.style.opacity = '1';
+              scrollLeftBtn.style.pointerEvents = 'auto';
+            }
+          }
+          if (entry.target === cards[cards.length - 1]) {
+            if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+              scrollRightBtn.style.opacity = '0';
+              scrollRightBtn.style.pointerEvents = 'none';
+            } else {
+              scrollRightBtn.style.opacity = '1';
+              scrollRightBtn.style.pointerEvents = 'auto';
+            }
+          }
+        });
+      }, {
+        root: testimonialsCarousel,
+        threshold: [0, 0.5, 1]
+      });
 
-      if (testimonialsCarousel.scrollLeft >= maxScrollLeft - 5) {
-        scrollRightBtn.style.opacity = '0';
-        scrollRightBtn.style.pointerEvents = 'none';
-      } else {
-        scrollRightBtn.style.opacity = '1';
-        scrollRightBtn.style.pointerEvents = 'auto';
-      }
-    };
-
-    testimonialsCarousel.addEventListener('scroll', updateArrowsVisibility);
-    window.addEventListener('resize', updateArrowsVisibility);
-    // Timeout para asegurar que el DOM y estilos esten listos
-    setTimeout(updateArrowsVisibility, 100);
+      observer.observe(cards[0]);
+      observer.observe(cards[cards.length - 1]);
+    }
 
     scrollLeftBtn.addEventListener('click', () => {
       testimonialsCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
