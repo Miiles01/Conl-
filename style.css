@@ -743,8 +743,8 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
     .testimonials-cards::-webkit-scrollbar { display: none; }
     .testimonials-cards .testimonial-card {
         flex: 0 0 auto;
-        width: 80vw;
-        max-width: 320px;
+        width: 100%;
+        max-width: 100%;
         scroll-snap-align: center;
     }
 }
@@ -2439,9 +2439,9 @@ details > summary::marker {
     stroke: white !important;
   }
   .mobile-scroll-arrow.left {
-    left: -10px;
+    left: 0px;
   }
   .mobile-scroll-arrow.right {
-    right: -10px;
+    right: 0px;
   }
 }
