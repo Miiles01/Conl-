@@ -1884,7 +1884,7 @@ h1, h2, h3, h4, p, .badge, .hero__trust span {
 
 /* CTA Section Background Image */
 .cta-final {
-  background-image: url('./public/img/cta-bg.jpg');
+  background-image: url('./public/img/cta-bg.webp');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
