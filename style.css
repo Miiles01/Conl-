@@ -2394,3 +2394,17 @@ details > summary::-webkit-details-marker {
 details > summary::marker {
   display: none !important;
 }
+
+.flor-bienestar-img {
+  max-width: 650px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .flor-bienestar-img {
+    max-width: 250px;
+  }
+}
