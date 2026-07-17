@@ -658,34 +658,36 @@
         </div>
 
         <div class="container" style="position: relative;">
-          <!-- Controles móviles -->
+          <!-- Controles móviles (fuera del swiper-container para poder clickearlos) -->
           <button class="mobile-scroll-arrow left" aria-label="Anterior">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
           </button>
           
-          <div class="testimonials-cards" id="testimonialsCarousel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
-            <div class="testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
-              <div class="video-facade" data-video-id="NN2j1LQchxw">
-                <img src="https://img.youtube.com/vi/NN2j1LQchxw/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
-                <button class="play-circle" aria-label="Reproducir testimonio">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                </button>
+          <div class="swiper testimonials-swiper" style="width: 100%; overflow: hidden;">
+            <div class="swiper-wrapper testimonials-cards" id="testimonialsCarousel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+              <div class="swiper-slide testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+                <div class="video-facade" data-video-id="NN2j1LQchxw">
+                  <img src="https://img.youtube.com/vi/NN2j1LQchxw/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
+                  <button class="play-circle" aria-label="Reproducir testimonio">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
-              <div class="video-facade" data-video-id="q6yGv_VPPlc">
-                <img src="https://img.youtube.com/vi/q6yGv_VPPlc/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
-                <button class="play-circle" aria-label="Reproducir testimonio">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                </button>
+              <div class="swiper-slide testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+                <div class="video-facade" data-video-id="q6yGv_VPPlc">
+                  <img src="https://img.youtube.com/vi/q6yGv_VPPlc/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
+                  <button class="play-circle" aria-label="Reproducir testimonio">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
-              <div class="video-facade" data-video-id="1I17YweZlrE">
-                <img src="https://img.youtube.com/vi/1I17YweZlrE/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
-                <button class="play-circle" aria-label="Reproducir testimonio">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-                </button>
+              <div class="swiper-slide testimonial-card gs-reveal-up" style="background: white; padding: 20px; border-radius: 12px; border: none; box-shadow: 0 10px 40px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column;">
+                <div class="video-facade" data-video-id="1I17YweZlrE">
+                  <img src="https://img.youtube.com/vi/1I17YweZlrE/maxresdefault.jpg" alt="Testimonio en video de una familia Conlú" loading="lazy">
+                  <button class="play-circle" aria-label="Reproducir testimonio">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

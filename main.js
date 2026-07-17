@@ -408,23 +408,22 @@ if (downloadForm && downloadEmail && downloadError) {
   });
 }
 
-// --- TESTIMONIALS MOBILE ARROWS ---
+// --- TESTIMONIALS MOBILE SWIPER ---
 document.addEventListener('DOMContentLoaded', () => {
-  const testimonialsCarousel = document.getElementById('testimonialsCarousel');
-  const scrollLeftBtn = document.querySelector('.mobile-scroll-arrow.left');
-  const scrollRightBtn = document.querySelector('.mobile-scroll-arrow.right');
-
-  if (testimonialsCarousel && scrollLeftBtn && scrollRightBtn) {
-    const getScrollAmount = () => {
-      const card = testimonialsCarousel.querySelector('.testimonial-card');
-      return card ? card.offsetWidth + 16 : 320;
-    };
-
-    scrollLeftBtn.addEventListener('click', () => {
-      testimonialsCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
-    scrollRightBtn.addEventListener('click', () => {
-      testimonialsCarousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+  if (typeof Swiper !== 'undefined') {
+    new Swiper('.testimonials-swiper', {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: '.mobile-scroll-arrow.right',
+        prevEl: '.mobile-scroll-arrow.left',
+      },
+      breakpoints: {
+        768: {
+          enabled: false
+        }
+      }
     });
   }
 });
