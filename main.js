@@ -415,10 +415,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollRightBtn = document.querySelector('.mobile-scroll-arrow.right');
 
   if (testimonialsCarousel && scrollLeftBtn && scrollRightBtn) {
+    scrollLeftBtn.style.transition = 'opacity 0.3s ease';
+    scrollRightBtn.style.transition = 'opacity 0.3s ease';
+
     const getScrollAmount = () => {
       const card = testimonialsCarousel.querySelector('.testimonial-card');
       return card ? card.offsetWidth + 16 : 320;
     };
+
+    const updateArrowsVisibility = () => {
+      const maxScrollLeft = testimonialsCarousel.scrollWidth - testimonialsCarousel.clientWidth;
+      
+      if (testimonialsCarousel.scrollLeft <= 5) {
+        scrollLeftBtn.style.opacity = '0';
+        scrollLeftBtn.style.pointerEvents = 'none';
+      } else {
+        scrollLeftBtn.style.opacity = '1';
+        scrollLeftBtn.style.pointerEvents = 'auto';
+      }
+
+      if (testimonialsCarousel.scrollLeft >= maxScrollLeft - 5) {
+        scrollRightBtn.style.opacity = '0';
+        scrollRightBtn.style.pointerEvents = 'none';
+      } else {
+        scrollRightBtn.style.opacity = '1';
+        scrollRightBtn.style.pointerEvents = 'auto';
+      }
+    };
+
+    testimonialsCarousel.addEventListener('scroll', updateArrowsVisibility);
+    window.addEventListener('resize', updateArrowsVisibility);
+    // Timeout para asegurar que el DOM y estilos esten listos
+    setTimeout(updateArrowsVisibility, 100);
 
     scrollLeftBtn.addEventListener('click', () => {
       testimonialsCarousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
