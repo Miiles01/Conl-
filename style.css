@@ -1821,6 +1821,14 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
     width: 30px;
     height: 30px;
   }
+  
+  /* Reduce space between hero features card and problem image */
+  .hero {
+    padding-bottom: 1rem !important;
+  }
+  #problema.section {
+    padding-top: 1rem !important;
+  }
 }
 
 /* Responsive Demo Video Toggles */
