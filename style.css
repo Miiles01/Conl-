@@ -2408,3 +2408,36 @@ details > summary::marker {
     max-width: 250px;
   }
 }
+
+.mobile-scroll-arrow {
+  display: none;
+}
+@media (max-width: 767px) {
+  .mobile-scroll-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+  }
+  .mobile-scroll-arrow svg {
+    width: 24px;
+    height: 24px;
+  }
+  .mobile-scroll-arrow.left {
+    left: -10px;
+  }
+  .mobile-scroll-arrow.right {
+    right: -10px;
+  }
+}

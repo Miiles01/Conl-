@@ -408,3 +408,19 @@ if (downloadForm && downloadEmail && downloadError) {
   });
 }
 
+// --- TESTIMONIALS MOBILE ARROWS ---
+document.addEventListener('DOMContentLoaded', () => {
+  const testimonialsCarousel = document.getElementById('testimonialsCarousel');
+  const scrollLeftBtn = document.querySelector('.mobile-scroll-arrow.left');
+  const scrollRightBtn = document.querySelector('.mobile-scroll-arrow.right');
+
+  if (testimonialsCarousel && scrollLeftBtn && scrollRightBtn) {
+    scrollLeftBtn.addEventListener('click', () => {
+      testimonialsCarousel.scrollBy({ left: -320, behavior: 'smooth' });
+    });
+    scrollRightBtn.addEventListener('click', () => {
+      testimonialsCarousel.scrollBy({ left: 320, behavior: 'smooth' });
+    });
+  }
+});
+
