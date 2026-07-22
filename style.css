@@ -735,7 +735,7 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   border: 1px solid rgba(0,0,0,0.03);
-  box-shadow: 0 15px 35px rgba(47, 47, 119, 0.08); /* Permanent shadow prevents overlapping white cards from looking "cut" */
+  box-shadow: 0 5px 15px rgba(47, 47, 119, 0.05); /* Sombra más sutil y de menor amplitud */
   transition: box-shadow var(--transition-smooth);
 }
 
