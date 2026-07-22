@@ -9,12 +9,12 @@
 .highlight-pacifico {
   font-family: 'Pacifico', cursive;
   font-weight: normal;
-  color: var(--color-warm-yellow);
+  color: var(--c, var(--color-warm-yellow)); /* use local var --c if available or fallback */
   display: inline-block;
-  padding: 0 0.1em;
+  padding: 0 0.25em; /* mayor padding para evitar clipping */
   font-size: 1.15em;
   overflow: visible;
-  line-height: 1.1;
+  line-height: 1.4; /* mayor line-height para evitar solapamientos en mobile */
   text-transform: none; /* In case the title is uppercase */
 }
 
