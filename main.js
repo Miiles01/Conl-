@@ -416,3 +416,50 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// --- DRAG TO SCROLL CAROUSELS (Desktop/Tablet) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.mwg_effect001 .cards, .testimonials-cards');
+    
+    carousels.forEach(carousel => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carousel.classList.add('active');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+            carousel.style.cursor = 'grabbing';
+            // Disable scroll-snap temporarily while dragging for smoother feeling
+            carousel.style.scrollSnapType = 'none';
+        });
+        
+        const stopDrag = () => {
+            isDown = false;
+            carousel.classList.remove('active');
+            carousel.style.cursor = 'grab';
+            // Restore scroll-snap
+            carousel.style.scrollSnapType = '';
+        };
+
+        carousel.addEventListener('mouseleave', stopDrag);
+        carousel.addEventListener('mouseup', stopDrag);
+        
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll-fast multiplier
+            carousel.scrollLeft = scrollLeft - walk;
+        });
+
+        // Set initial cursor
+        carousel.style.cursor = 'grab';
+        
+        // Prevent default drag on child images/links so they don't break the scroll
+        carousel.querySelectorAll('img, a, .card, .testimonial-card').forEach(el => {
+            el.addEventListener('dragstart', e => e.preventDefault());
+        });
+    });
+});
