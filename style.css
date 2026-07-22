@@ -723,6 +723,11 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
         margin: 40px calc(-1 * var(--space-md)) 0;
         padding: 1.75rem var(--space-md) 3.25rem;
     }
+    @media (min-width: 768px) {
+        .testimonials-cards {
+            justify-content: center;
+        }
+    }
     .testimonials-cards::-webkit-scrollbar { display: none; }
     .testimonials-cards .testimonial-card {
         flex: 0 0 auto;
