@@ -127,56 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       })
   }
-    // 3.5 MWG Effect 001 (Horizontal Scroll Cards)
-  const mwg001 = document.querySelector('.mwg_effect001');
-  if (mwg001 && window.innerWidth >= 768) {
-    const container = mwg001.querySelector('.horizontal-container');
-    const cardsContainer = mwg001.querySelector('.cards');
-    const cardsList = mwg001.querySelectorAll('.card');
 
-    // Function to calculate scroll distance
-    const getScrollDistance = () => cardsContainer.scrollWidth - window.innerWidth;
-
-    const scrollTween = gsap.to(cardsContainer, {
-        x: () => -getScrollDistance(),
-        ease: 'none',
-        scrollTrigger: {
-            trigger: mwg001,
-            pin: true,
-            scrub: true,
-            start: 'center center',
-            end: () => '+=' + getScrollDistance(),
-            invalidateOnRefresh: true
-        }
-    });
-
-    cardsList.forEach(card => {
-        const values = {
-            // Reduced drastic X and Y movements to prevent harsh overlapping
-            x: (Math.random() * 10 + 10) * (Math.random() < 0.5 ? 1 : -1),
-            y: (Math.random() * 4 + 6) * (Math.random() < 0.5 ? 1 : -1),
-            rotation: (Math.random() * 6 + 4) * (Math.random() < 0.5 ? 1 : -1)
-        };
-
-        gsap.fromTo(card, {
-            rotation: values.rotation,
-            xPercent: values.x,
-            yPercent: values.y
-        }, {
-            rotation: -values.rotation,
-            xPercent: -values.x,
-            yPercent: -values.y,
-            ease: 'none',
-            scrollTrigger: {
-                trigger: card,
-                containerAnimation: scrollTween,
-                start: 'left 120%',
-                end: 'right -20%',
-                scrub: true,
-            }
-        });
-    });
-  }
 
 // 4. Color Change (Scroll Chain)
   const themeSections = document.querySelectorAll('[data-theme]');

@@ -654,78 +654,61 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
   max-width: 800px;
 }
 
-/* MWG Effect 001 - Horizontal Scroll Cards */
-.mwg_effect001 {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
+/* MWG Effect 001 - Horizontal Scroll Cards (Standard swipeable carousel globally) */
+.mwg_effect001 { overflow: visible; }
 .mwg_effect001 .horizontal-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: auto;
-    padding: 4rem 0; /* Ensures enough room for shadows and tall cards */
-    min-height: 65vh;
     width: 100%;
+    min-height: 0;
+    padding: 1rem 0;
+    overflow: visible;
 }
-
 .mwg_effect001 .cards {
     display: flex;
-    width: max-content;
-    gap: 6vw; /* Increased gap to separate cards */
-    will-change: transform;
-    padding: 2rem 10vw; /* Added vertical padding for shadow */
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    gap: 2rem;
+    padding: 1.75rem 1.5rem 3.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
 }
+.mwg_effect001 .cards::-webkit-scrollbar { display: none; } /* WebKit */
 
 .mwg_effect001 .card {
     position: relative;
+    flex: 0 0 auto;
     width: 80vw;
-    max-width: 350px;
+    max-width: 320px;
     height: auto;
     display: flex;
     flex-direction: column;
+    scroll-snap-align: center;
 }
 
 @media (min-width: 768px) {
     .mwg_effect001 .card {
-        width: 25vw;
+        width: 30vw;
         max-width: 400px;
+        scroll-snap-align: start;
+    }
+    .mwg_effect001 .cards {
+        gap: 2.5rem;
+        padding-left: 2.5rem;
+        scroll-padding: 0 2.5rem;
     }
 }
 
-/* Mobile: sin pin GSAP — carrusel horizontal con swipe táctil (scroll nativo + snap) */
-@media (max-width: 767px) {
-    .mwg_effect001 { overflow: visible; }
-    .mwg_effect001 .horizontal-container {
-        min-height: 0;
-        padding: 1rem 0;
-        overflow: visible;
-    }
-    .mwg_effect001 .cards {
-        flex-direction: row;
-        align-items: stretch;
-        width: 100%;
-        gap: 1rem;
-        padding: 1.75rem 1.5rem 3.25rem; /* espacio extra para que no se corte la sombra de las cards */
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scroll-padding: 0 1.5rem;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-    }
-    .mwg_effect001 .cards::-webkit-scrollbar { display: none; } /* WebKit */
-    .mwg_effect001 .card {
-        flex: 0 0 auto;
-        width: 80vw;
-        max-width: 320px;
-        scroll-snap-align: center;
-    }
-    /* Ocultar las tarjetas espaciadoras invisibles */
-    .mwg_effect001 .cards > .card:not(.solution-card) {
-        display: none;
-    }
+/* Ocultar las tarjetas espaciadoras invisibles */
+.mwg_effect001 .cards > .card:not(.solution-card) {
+    display: none;
+}
 
     /* Testimonios: carrusel horizontal con swipe táctil (mismo patrón que mwg_effect001) */
     .testimonials-cards {
@@ -747,8 +730,6 @@ body[data-current-theme="mint"] .subtitle { color: var(--color-light-blue); }
         max-width: 100%;
         scroll-snap-align: center;
     }
-}
-
 .solution-card {
   background: var(--color-white);
   padding: 2.5rem;
